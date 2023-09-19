@@ -1,0 +1,47 @@
+1. node filename.js
+2. setInterval(()=>{
+console.log("hi")
+}, 1000
+);
+
+3. __dirname, __filename, require, module, process
+
+4. modules
+   console.log(module) -- export key is empty
+
+5. In file to be exported 
+	--- module.exports = {var1, var2}
+	--- module.exports = {funcName}
+
+   In file where we need to import
+	--- const name = require('./filename')
+
+
+   If we wanted to export more than one thing from a single module, we can do it like this:
+	const mod1Function = () => console.log('Mod1 is alive!')
+	const mod1Function2 = () => console.log('Mod1 is rolling, baby!')
+
+	module.exports = { mod1Function, mod1Function2 }
+   
+
+   importing any file (require('./filename')) will execute any function in filename.js (when file where import is written is ran) even if we have not exported it there.
+
+6. os module
+	const os = require('os')
+	interact with OS and Server
+   os.type()
+   os.userInfo()
+   os.uptime()       etc...
+
+7. path module -- interacts with file path easily
+	const path = require("path")
+	path.join('a','b','c').....// joins a/b/c
+	path.resolve()
+
+8. Let, var , const (https://www.freecodecamp.org/news/var-let-and-const-whats-the-difference/)
+
+Var can be redeclared and redefined, functionally scoped but it has problem of updating global variable if particular block of code is executed and it has var decalred variable with same name as global variable.
+
+Let can be redefined/ updated but can't be redeclared. Can be redecalred in different scopes.Block scoped.
+
+Const can neither be redefined nor redeclared. but an value of an object of const type can be updated (like object.keyname = newvalue  // wont return error). Block scoped. Const must be initialised during declaration.
